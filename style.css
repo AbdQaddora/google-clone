@@ -2,6 +2,7 @@
 :root {
     --main-color: #bdc1c6;
     --background-color: #202124;
+    --border-color: #999da2;
 }
 
 * {
@@ -24,6 +25,10 @@ body {
 
 a {
     text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 .btn {
@@ -60,4 +65,144 @@ header>* {
 header a {
     display: inline-block;
     vertical-align: middle;
+}
+
+/* main */
+main {
+    width: 50%;
+    min-width: 400px;
+    max-width: 600px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+
+/* search-input */
+.search-input {
+    margin-top: 25px;
+    --search-input-height: 34px;
+    --search-input-padding: 4px;
+    padding: var(--search-input-padding);
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--search-input-height) + var(--search-input-height));
+    position: relative;
+    z-index: 999;
+}
+
+.search-input>img:nth-of-type(1) {
+    position: absolute;
+    left: 10px;
+}
+
+.search-input>.search-methods {
+    position: absolute;
+    right: 10px;
+}
+
+
+
+.search-input * {
+    display: inline-block;
+    height: var(--search-input-height);
+    vertical-align: middle;
+    z-index: 999;
+}
+
+.search-input input {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    width: 85%;
+}
+
+.search-input:hover *,
+.search-input:hover {
+    background-color: #303134;
+    border: 1px solid #303134;
+    color: #fff;
+}
+
+
+.search-input input:empty+.search-help {
+    display: none;
+}
+
+.search-input input:focus+.search-help {
+    display: block;
+}
+
+.search-help {
+    padding-top: 22px;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    text-align: left;
+    top: calc(100% - 22px);
+    left: 0;
+    display: none;
+    z-index: -1;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    overflow: hidden;
+}
+
+.search-help p {
+    padding: 5px 15px;
+}
+
+/*btn container */
+.btn-container {
+    margin-top: 35px;
+}
+
+.btn-container .btn {
+    background-color: #303134;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-inline-end: 15px;
+    border: 1px solid #303134;
+
+}
+
+.btn-container .btn:hover {
+    border-color: var(--main-color);
+}
+
+main .language {
+    margin-top: 35px;
+}
+
+/* !end main */
+
+/* footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #171717;
+    width: 100%;
+}
+
+footer>div {
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--border-color);
+}
+
+footer nav {
+    position: relative;
+}
+
+footer nav div {
+    display: inline-block;
+    padding: 15px 30px;
+}
+
+footer nav div a {
+    margin-inline-end: 15px;
+    color: var(--border-color);
+}
+
+footer nav .nav-end {
+    position: absolute;
+    right: 0;
 }
